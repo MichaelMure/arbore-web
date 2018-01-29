@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Arbore - P2P social file sharing',
   },
   plugins: ['gatsby-plugin-react-helmet'],
 };
