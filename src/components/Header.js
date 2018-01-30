@@ -4,7 +4,7 @@ import { Container, Menu, Visibility, Segment, Image, Dropdown } from "semantic-
 
 const menuItems = [
   { name: "Arbore", path: "/", exact: true},
-  { name: "About", path: "/about/", exact: true },
+  { name: "Releases", path: "/releases/", exact: true },
   { name: "Team", path: "/team/", exact: true },
 ]
 
