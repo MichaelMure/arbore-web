@@ -3,9 +3,9 @@ import Link from 'gatsby-link'
 import { Container, Menu, Visibility, Segment, Image, Dropdown } from "semantic-ui-react"
 
 const menuItems = [
-  { name: "Arbore", path: "/", exact: true, },
-  { name: "About", path: "/about/", exact: true, },
-  { name: "Blog", path: "/blog/", exact: false, },
+  { name: "Arbore", path: "/", exact: true},
+  { name: "About", path: "/about/", exact: true },
+  { name: "Team", path: "/team/", exact: true },
 ]
 
 export default class Header extends Component {
@@ -89,7 +89,7 @@ export default class Header extends Component {
       <div>
         { visible ? this.fixedMenu() : null}
 
-        <Visibility onBottomPassed={::this.showFixedMenu} onBottomVisible={::this.hideFixedMenu} once={false}>
+        <Visibility onBottomPassed={::this.showFixedMenu} onBottomVisible={::this.hideFixedMenu} once={false} style={{ marginBottom: "5px"}}>
 
           <Segment inverted textAlign='center' vertical>
             { this.normalMenu() }
