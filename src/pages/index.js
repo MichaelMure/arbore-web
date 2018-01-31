@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Container, Divider, Grid, Header, Image, Message, Segment } from "semantic-ui-react"
+import { Container, Divider, Grid, Header, Icon, Image, Message, Segment } from "semantic-ui-react"
+
+import logo from "../images/logo.svg"
 
 const IndexPage = () => (
   <div>
@@ -18,7 +20,7 @@ const IndexPage = () => (
       <Grid columns={2}>
         <Grid.Row>
           <Grid.Column>
-            <Image src="logo.svg" />
+            <Image src={logo} />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
             <Header as='h3' style={{ fontSize: '2em' }}>I shouldn't have gone with their competitor.</Header>
@@ -40,13 +42,13 @@ const IndexPage = () => (
             </p>
           </Grid.Column>
           <Grid.Column>
-            <Image src="logo.svg" />
+            <Image src={logo} />
           </Grid.Column>
         </Grid.Row>
 
         <Grid.Row>
           <Grid.Column>
-            <Image src="logo.svg" />
+            <Image src={logo} />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
             <Header as='h3' style={{ fontSize: '2em' }}>I shouldn't have gone with their competitor.</Header>
@@ -61,11 +63,33 @@ const IndexPage = () => (
       </Grid>
     </Container>
 
-    <Container inverted fluid>
+    <Segment inverted>
+      <Container>
+        <Grid columns={3}>
 
-      blaaaah
+          <Grid.Column>
+            <Grid.Row>
+              <Icon circular size='huge' name='users' />
+              blaah
+            </Grid.Row>
+          </Grid.Column>
 
-    </Container>
+          <Grid.Column>
+            <Grid.Row>
+              <Icon circular size='huge' name='users' />
+              blaah
+            </Grid.Row>
+          </Grid.Column>
+
+          <Grid.Column>
+            <Grid.Row>
+              blaah
+            </Grid.Row>
+          </Grid.Column>
+
+        </Grid>
+      </Container>
+    </Segment>
 
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>

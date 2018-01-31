@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import { Container, Menu, Visibility, Segment, Image, Dropdown } from "semantic-ui-react"
 
+import logo from "../images/logo.svg"
+
 const menuItems = [
   { name: "Arbore", path: "/", exact: true},
   { name: "Releases", path: "/releases/", exact: true },
@@ -27,7 +29,7 @@ export default class Header extends Component {
     return (
       <Menu fixed='top' size='large'>
         <Container>
-          <Image src="logo.svg" size="mini" verticalAlign="middle" />
+          <Image src={logo} size="mini" verticalAlign="middle" />
           { ::this.itemsLeft() }
         </Container>
       </Menu>
@@ -39,7 +41,7 @@ export default class Header extends Component {
       <Container>
         <Menu inverted pointing secondary size='large'>
           <Menu.Menu  position="left">
-            <Image src="logo.svg" size="mini" verticalAlign="middle" />
+            <Image src={logo} size="mini" verticalAlign="middle" />
             { ::this.itemsLeft() }
           </Menu.Menu>
           <Menu.Menu  position="right">

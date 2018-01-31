@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Divider, Grid, Header, Image, List, Segment } from "semantic-ui-react"
 
+import logo from "../images/logo.svg"
+
 export default class Footer extends Component {
 
   render() {
@@ -51,7 +53,7 @@ export default class Footer extends Component {
           <Image
             centered
             size='mini'
-            src='/logo.svg'
+            src={logo}
           />
           <List horizontal inverted divided link>
             <List.Item as='a' href='#'>Site Map</List.Item>
