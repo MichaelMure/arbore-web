@@ -1,17 +1,18 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Segment, Icon, Container, Sidebar, Button } from "semantic-ui-react"
 import Footer from "../components/Footer"
 import Header from '../components/Header'
+
 import 'semantic-ui-css/semantic.min.css'
+import '../css/global.css'
 
 const layout = ({children, location}) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Arbore - P2P social file sharing"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Friend-to-friend filesharing app to save the world from dystopia' },
+        { name: 'keywords', content: 'P2P, F2F, file sharing, file transfer, social, ipfs' },
       ]}
     />
     <Header location={location} />
