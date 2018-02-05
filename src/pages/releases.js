@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import { Accordion, Container, Header, Icon, Label, Message, Segment, Table } from "semantic-ui-react"
+import { Accordion, Container, Dimmer, Header, Icon, Label, Loader, Message, Segment, Table } from "semantic-ui-react"
 import humanize from "humanize"
 import path from 'path'
 
+const API_QUERY = 'https://api.github.com/repos/MichaelMure/Arbore/releases'
+
 export default class ReleasePages extends Component {
 
+  constructor(props: P, context: any) {
+    super(props, context)
+
+    this.state = {
+      releases: []
+    }
+  }
+
+  componentDidMount() {
+    fetch(API_QUERY)
+      .then(response => response.json())
+      .then(data => this.setState({releases: data}))
+  }
+
   renderRelease(release) {
-    const date = new Date(Date.parse(release.publishedAt))
+    const date = new Date(Date.parse(release.published_at))
 
     return {
       title: {
@@ -49,12 +65,12 @@ export default class ReleasePages extends Component {
 
     const render = (assets) => {
       return assets.map((asset) => (
-        <Table.Row>
+        <Table.Row key={asset.id}>
           <Table.Cell><Icon name={asset.icon} size="large"/>{asset.os}</Table.Cell>
-          <Table.Cell><a href={asset.browserDownloadUrl}>{asset.name}</a></Table.Cell>
+          <Table.Cell><a href={asset.browser_download_url}>{asset.name}</a></Table.Cell>
           <Table.Cell>{humanize.filesize(asset.size)}</Table.Cell>
-          <Table.Cell>{asset.downloadCount}</Table.Cell>
-          <Table.Cell textAlign="center"><a href={asset.browserDownloadUrl}><Icon name="download" size="large"/></a></Table.Cell>
+          <Table.Cell>{asset.download_count}</Table.Cell>
+          <Table.Cell textAlign="center"><a href={asset.browser_download_url}><Icon name="download" size="large"/></a></Table.Cell>
         </Table.Row>
       ))
     }
@@ -81,9 +97,18 @@ export default class ReleasePages extends Component {
 
   render() {
 
-    const releases = this.props.data.allGithubRelease.edges.map(edge => edge.node)
+    const { releases } = this.state
+
+    if(!releases || releases.length <= 0) {
+      return (
+        <Container style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
+          <Loader active inline='centered'>Loading releases information...</Loader>
+        </Container>
+      )
+    }
+
     const current = releases.shift()
-    const currentDate = new Date(Date.parse(current.publishedAt))
+    const currentDate = new Date(Date.parse(current.published_at))
 
     return (
       <Container>
@@ -103,18 +128,3 @@ export default class ReleasePages extends Component {
     )
   }
 }
-
-export const pageQuery = graphql`
-  query GithubReleasesQuery {
-    allGithubRelease {
-      edges {
-        node {
-          url, body, name, htmlUrl, prerelease, publishedAt
-          assets {
-            name, size, downloadCount, browserDownloadUrl, 
-          }
-        }
-      }
-    }
-  }
-`

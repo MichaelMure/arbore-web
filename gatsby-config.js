@@ -5,15 +5,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-source-github`,
-      options: {
-        repository: "arbore",
-        tree: false,
-        releases: true,
-        user: "MichaelMure",
-      }
-    }
   ],
   pathPrefix: `/Arbore`,
 };
