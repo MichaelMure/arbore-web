@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import { Accordion, Container, Dimmer, Header, Icon, Label, Loader, Message, Segment, Table } from "semantic-ui-react"
+import { Accordion, Container, Header, Icon, Label, Loader, Message, Segment, Table } from "semantic-ui-react"
 import humanize from "humanize"
 import path from 'path'
-
-const API_QUERY = 'https://api.github.com/repos/MichaelMure/Arbore/releases'
+import PropTypes from 'prop-types'
 
 export default class ReleasePages extends Component {
 
@@ -17,8 +15,7 @@ export default class ReleasePages extends Component {
   }
 
   componentDidMount() {
-    fetch(API_QUERY)
-      .then(response => response.json())
+    this.context.releases
       .then(data => this.setState({releases: data}))
   }
 
@@ -128,3 +125,7 @@ export default class ReleasePages extends Component {
     )
   }
 }
+
+ReleasePages.contextTypes = {
+  releases: PropTypes.object
+};

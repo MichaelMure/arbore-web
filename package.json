@@ -12,7 +12,8 @@
     "react": "latest",
     "react-helmet": "^5.2.0",
     "semantic-ui-css": "^2.2.14",
-    "semantic-ui-react": "^0.77.2"
+    "semantic-ui-react": "^0.77.2",
+    "prop-types": "latest"
   },
   "keywords": [
     "gatsby"

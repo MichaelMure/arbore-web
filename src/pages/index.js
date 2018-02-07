@@ -1,6 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import { Container, Divider, Grid, Header, Icon, Image, Message, Segment } from "semantic-ui-react"
+import { Container, Grid, Header, Icon, Image, Message, Segment } from "semantic-ui-react"
 
 import logo from "../images/logo.svg"
 

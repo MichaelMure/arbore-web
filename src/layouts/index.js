@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import 'semantic-ui-css/semantic.min.css'
 import '../css/global.css'
 
-const layout = ({children, location}) => (
+export default ({children, location}) => (
   <div>
     <Helmet
       title="Arbore - P2P social file sharing"
@@ -16,9 +16,7 @@ const layout = ({children, location}) => (
       ]}
     />
     <Header location={location} />
-    { children() }
+      { children() }
     <Footer />
   </div>
 )
-
-export default layout
