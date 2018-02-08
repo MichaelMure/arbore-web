@@ -104,7 +104,8 @@ export default class ReleasePages extends Component {
       )
     }
 
-    const current = releases.shift()
+    const current = releases[0]
+    const olds = releases.slice(1)
     const currentDate = new Date(Date.parse(current.published_at))
 
     return (
@@ -119,7 +120,7 @@ export default class ReleasePages extends Component {
         <Header>Older releases</Header>
         <Accordion
            fluid
-          panels={releases.map(release => this.renderRelease(release))}
+          panels={olds.map(release => this.renderRelease(release))}
         />
       </Container>
     )
