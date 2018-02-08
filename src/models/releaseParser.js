@@ -1,12 +1,8 @@
 // @flow
-import marked from 'marked'
 import Release from './Release'
 import Asset from './Asset'
 import path from 'path'
 
-marked.setOptions({
-  gfm: true,
-})
 
 export default class releaseParser {
 
@@ -40,7 +36,7 @@ export default class releaseParser {
       new Date(Date.parse(data.published_at)),
       data.url,
       data.name,
-      {__html: marked(data.body)},
+      data.body,
       linux.map(releaseParser.assetTransformer),
       windows.map(releaseParser.assetTransformer),
       macos.map(releaseParser.assetTransformer)
