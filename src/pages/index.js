@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Grid, Header, Icon, Image, Message, Segment } from "semantic-ui-react"
+import Download from '../components/Download'
 
 import logo from "../images/logo.svg"
 
@@ -16,6 +17,7 @@ const IndexPage = () => (
       </Container>
     </Segment>
 
+    <Download/>
 
     <Segment className="stripe" vertical>
       <Container>

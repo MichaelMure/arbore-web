@@ -44,7 +44,6 @@ export default class ReleasePages extends Component {
   renderAssets(release: Release) {
 
     const render = (assets: Asset[]) => {
-      console.log(assets)
       return assets.map((asset: Asset) => (
         <Table.Row key={asset.id}>
           <Table.Cell><Icon name={asset.icon} size="large"/>{asset.os}</Table.Cell>
