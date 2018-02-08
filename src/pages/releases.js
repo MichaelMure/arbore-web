@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import { Accordion, Container, Header, Icon, Label, Loader, Message, Segment, Table } from "semantic-ui-react"
 import humanize from "humanize"
 import path from 'path'
+import marked from 'marked'
 import PropTypes from 'prop-types'
+
+marked.setOptions({
+  gfm: true,
+})
 
 export default class ReleasePages extends Component {
 
@@ -31,7 +36,9 @@ export default class ReleasePages extends Component {
         key: `content-${release.url}`,
         content: (
           <Segment>
-            <Message content={release.body}/>
+            <Message content={
+              <div dangerouslySetInnerHTML={{__html: marked(release.body)}}/>
+            }/>
             { this.renderAssets(release.assets) }
           </Segment>
         ),
@@ -111,7 +118,9 @@ export default class ReleasePages extends Component {
     return (
       <Container>
         <Header>Arbore {current.name} - {currentDate.toLocaleDateString()}</Header>
-        <Message content={current.body}/>
+        <Message content={
+          <div dangerouslySetInnerHTML={{__html: marked(current.body)}}/>
+        }/>
         <Container>
           { this.renderAssets(current.assets) }
         </Container>
