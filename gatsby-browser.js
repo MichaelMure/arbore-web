@@ -10,9 +10,8 @@ class ReleaseProvider extends Component {
     return {
       releases: fetch(API_QUERY)
         .then(response => response.json())
-        .then(r => {console.log(r); return r})
         .then(data => new releaseParser(data))
-        .catch((err) => { console.log("Error loading github data: ", err)})
+        .catch((err) => { console.log("Error loading github data: ", err); return null})
     }
   }
 
