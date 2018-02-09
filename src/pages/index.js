@@ -106,9 +106,6 @@ const IndexPage = () => (
       <Container>
         <Grid columns={2}>
           <Grid.Row>
-            <Grid.Column>
-              <Image src={logo} />
-            </Grid.Column>
             <Grid.Column verticalAlign="middle">
               <Header as='h3' style={{ fontSize: '2em' }}>I shouldn't have gone with their competitor.</Header>
               <p>
@@ -116,6 +113,9 @@ const IndexPage = () => (
                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 laboris nisi ut aliquip ex ea commodo consequat.
               </p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image src={logo} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -6,6 +6,8 @@ import { Button, Container, Grid, Header, Icon, Image, Message, Segment } from "
 import releaseParser from '../models/releaseParser'
 import getOS from '../utils/getos'
 
+import logo from "../images/logo.svg"
+
 export default class Download extends Component {
 
   constructor(props: P, context: any) {
@@ -22,6 +24,7 @@ export default class Download extends Component {
   }
 
   iconOpt     = { size: 'big' }
+  buttonOpt   = { size: 'massive', primary: true }
   voidLinux   = <Icon name='linux' disabled {...this.iconOpt}/>
   voidWindows = <Icon name='windows' disabled {...this.iconOpt}/>
   voidMacos   = <Icon name='apple' disabled {...this.iconOpt}/>
@@ -47,17 +50,17 @@ export default class Download extends Component {
 
     let button, platform
     const text = 'Download Arbore'
-    const fallback = <Button as={Link} to='/releases' size='massive'>{text}</Button>
+    const fallback = <Button as={Link} to='/releases' {...this.buttonOpt}>{text}</Button>
     switch (getOS()) {
       case 'windows':
         button = current.windowsAssets.length > 0
-          ? <Button as='a' href={current.windowsAssets[0].browserDownloadUrl}>{text}</Button>
+          ? <Button as='a' href={current.windowsAssets[0].browserDownloadUrl} {...this.buttonOpt}>{text}</Button>
           : fallback
         platform = 'Windows'
         break
       case 'osx':
         button = current.macosAssets.length > 0
-          ? <Button as='a' href={current.macosAssets[0].browserDownloadUrl}>{text}</Button>
+          ? <Button as='a' href={current.macosAssets[0].browserDownloadUrl} {...this.buttonOpt}>{text}</Button>
           : fallback
         platform = 'MacOS'
         break
@@ -72,24 +75,37 @@ export default class Download extends Component {
 
     return (
       <Container>
-        <Header>Arbore</Header>
-          { this.description }
-          { button }
-          Version { current.name }{ platform ? ' - ' + platform : ''  }
-          <Container>
-            { current.windowsAssets.length > 0
-              ? this.windowsLink(current.windowsAssets[0].browserDownloadUrl)
-              : this.voidWindows
-            }
-            { current.macosAssets.length > 0
-              ? this.macosLink(current.macosAssets[0].browserDownloadUrl)
-              : this.voidMacos
-            }
-            { current.linuxAssets.length > 0
-              ? this.linuxLink
-              : this.voidLinux
-            }
-          </Container>
+        <Grid columns={2}>
+          <Grid.Column>
+            <Image src={logo} />
+          </Grid.Column>
+          <Grid.Column verticalAlign='middle'>
+            <Header as='h1' style={{ fontSize: '4em', fontWeight: 400 }} color='blue'>Arbore</Header>
+            <div style={{ fontSize: '16px', lineHeight: '24px' }}>{ this.description }</div>
+            <Segment basic>
+              <div style={{textAlign: 'center'}}>
+                { button }
+              </div>
+              <div style={{textAlign: 'center'}}>
+                  Version { current.name }{ platform ? ' - ' + platform : ''  }
+              </div>
+              <div style={{textAlign: 'center'}}>
+                  { current.windowsAssets.length > 0
+                    ? this.windowsLink(current.windowsAssets[0].browserDownloadUrl)
+                    : this.voidWindows
+                  }
+                  { current.macosAssets.length > 0
+                    ? this.macosLink(current.macosAssets[0].browserDownloadUrl)
+                    : this.voidMacos
+                  }
+                  { current.linuxAssets.length > 0
+                    ? this.linuxLink
+                    : this.voidLinux
+                  }
+              </div>
+            </Segment>
+          </Grid.Column>
+        </Grid>
       </Container>
     )
   }
