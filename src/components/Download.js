@@ -25,12 +25,12 @@ export default class Download extends Component {
 
   iconOpt     = { size: 'big' }
   buttonOpt   = { size: 'massive', primary: true }
-  voidLinux   = <Icon name='linux' disabled {...this.iconOpt}/>
-  voidWindows = <Icon name='windows' disabled {...this.iconOpt}/>
-  voidMacos   = <Icon name='apple' disabled {...this.iconOpt}/>
-  linuxLink   = <Link to="/releases"><Icon name='linux' {...this.iconOpt}/></Link>
-  windowsLink = (url) => <a href={url}><Icon name='windows' {...this.iconOpt}/></a>
-  macosLink   = (url) => <a href={url}><Icon name='apple' {...this.iconOpt}/></a>
+  voidLinux   = <Link to="/releases"><Icon name='linux' disabled   {...this.iconOpt}/></Link>
+  voidWindows = <Link to="/releases"><Icon name='windows' disabled {...this.iconOpt}/></Link>
+  voidMacos   = <Link to="/releases"><Icon name='apple' disabled   {...this.iconOpt}/></Link>
+  linuxLink   = <Link to="/releases"><Icon name='linux'            {...this.iconOpt}/></Link>
+  windowsLink = (url) => <a href={url}><Icon name='windows'        {...this.iconOpt}/></a>
+  macosLink   = (url) => <a href={url}><Icon name='apple'          {...this.iconOpt}/></a>
 
   description = 'Arbore is a free and open-source file sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.'
 
