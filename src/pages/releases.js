@@ -3,8 +3,7 @@ import { Accordion, Container, Header, Icon, Label, Loader, Message, Segment, Ta
 import PropTypes from 'prop-types'
 import Asset from '../models/Asset'
 import Release from '../models/Release'
-import releaseParser from '../models/releaseParser'
-
+import ReleaseParser from '../utils/ReleaseParser'
 
 export default class ReleasePages extends Component {
 
@@ -77,7 +76,7 @@ export default class ReleasePages extends Component {
 
   render() {
 
-    const releases : ?releaseParser = this.state.releases
+    const releases : ?ReleaseParser = this.state.releases
 
     if(!releases || releases.length <= 0) {
       return (

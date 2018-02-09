@@ -1,15 +1,14 @@
 // @flow
-import Release from './Release'
-import Asset from './Asset'
+import Release from '../models/Release'
+import Asset from '../models/Asset'
 import path from 'path'
 
-
-export default class releaseParser {
+export default class ReleaseParser {
 
   releases: Release[]
 
   constructor(data) {
-    this.releases = data.map(releaseParser.releaseTransformer)
+    this.releases = data.map(ReleaseParser.releaseTransformer)
   }
 
   static releaseTransformer(data) : Release {
@@ -37,9 +36,9 @@ export default class releaseParser {
       data.url,
       data.name,
       data.body,
-      linux.map(releaseParser.assetTransformer),
-      windows.map(releaseParser.assetTransformer),
-      macos.map(releaseParser.assetTransformer)
+      linux.map(ReleaseParser.assetTransformer),
+      windows.map(ReleaseParser.assetTransformer),
+      macos.map(ReleaseParser.assetTransformer)
     )
   }
 
