@@ -42,10 +42,10 @@ export default class Download extends Component {
 
     if(!releases) {
       return (
-        <Container>
+        <Container text>
           <Grid columns={2}>
             <Grid.Column>
-              <Image src={logo} />
+              <Image src={logo} size='medium'/>
             </Grid.Column>
             <Grid.Column verticalAlign='middle'>
               <Header as='h1' style={{ fontSize: '4em', fontWeight: 400 }} color='blue'>Arbore</Header>
@@ -91,10 +91,10 @@ export default class Download extends Component {
     }
 
     return (
-      <Container>
+      <Container text>
         <Grid columns={2}>
           <Grid.Column>
-            <Image src={logo} />
+            <Image src={logo} size='medium'/>
           </Grid.Column>
           <Grid.Column verticalAlign='middle'>
             <Header as='h1' style={{ fontSize: '4em', fontWeight: 400 }} color='blue'>Arbore</Header>

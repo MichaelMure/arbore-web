@@ -2,5 +2,5 @@
     padding: 3rem 0;
 }
 .ui.vertical.stripe.segment:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.04);
 }

@@ -4,10 +4,17 @@ import Download from '../components/Download'
 
 import logo from "../images/logo.svg"
 
+const Argument = ({icon, header, text}) => (
+  <Grid.Column>
+    <Header><Icon size='huge' name={icon} />{header}</Header>
+    <div style={{ fontSize: '16px', lineHeight: '24px' }}>{ text }</div>
+  </Grid.Column>
+)
+
 const IndexPage = () => (
   <div>
 
-    <Segment className="stripe" vertical>
+    <Segment vertical basic>
       <Container>
         <Message
           icon="announcement"
@@ -22,59 +29,20 @@ const IndexPage = () => (
     <Segment className="stripe" vertical>
       <Container>
         <Grid stackable>
+
           <Grid.Row>
             <Grid columns={3} divided stackable>
-              <Grid.Column>
-                <Header>
-                  <Icon size='huge' name='privacy' />
-                  Privacy
-                </Header>
-                qzdniklqzdnklzd
-              </Grid.Column>
-
-              <Grid.Column>
-                <Header>
-                  <Icon size='huge' name='check' />
-                  Convenient & efficient
-                </Header>
-                qzdniklqzdnklzd
-              </Grid.Column>
-
-              <Grid.Column>
-                <Header>
-                  <Icon size='huge' name='code' />
-                  Free & Open Source
-                </Header>
-                qzdniklqzdnklzd
-              </Grid.Column>
+              <Argument icon='privacy' header='Privacy' text='Keep your private communications private. Stop being the product, be yourself.' />
+              <Argument icon='check' header='Convenient & efficient' text='No number or size limits. Share as much and anything you want.' />
+              <Argument icon='code' header='Free & Open Source' text='Free as in free beer, Free as in free speech.' />
             </Grid>
           </Grid.Row>
 
           <Grid.Row>
             <Grid columns={3} divided stackable>
-              <Grid.Column>
-                <Header>
-                  <Icon size='huge' name='laptop' />
-                  Multi-plateform
-                </Header>
-                Windows, MacOS and Linux are supported
-              </Grid.Column>
-
-              <Grid.Column>
-                <Header>
-                  <Icon size='huge' name='check' />
-                  Convenient & efficient
-                </Header>
-                qzdniklqzdnklzd
-              </Grid.Column>
-
-              <Grid.Column>
-                <Header>
-                  <Icon size='huge' name='bug' />
-                  Bug free
-                </Header>
-                No spyware, No ads, No user tracking.
-              </Grid.Column>
+              <Argument icon='laptop' header='Multi-platform' text='Windows, MacOS and Linux are supported.' />
+              <Argument icon='bug' header='Bug free' text='No spyware, No ads, No user tracking.' />
+              <Argument icon='plug' header='Decentralized' text='Direct transfer from the sender to the recipient. You keep the control.' />
             </Grid>
           </Grid.Row>
 
