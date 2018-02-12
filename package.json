@@ -1,8 +1,13 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "arbore-website",
+  "description": "Website for the Arbore project",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Michael Muré",
+    "email": "batolettre@gmail.com",
+    "url": "https://github.com/MichaelMure"
+  },
   "dependencies": {
     "gatsby": "^1.9.158",
     "gatsby-link": "^1.6.34",
@@ -17,10 +22,19 @@
     "semantic-ui-react": "^0.77.2"
   },
   "keywords": [
-    "gatsby"
+    "arbore",
+    "P2P",
+    "F2F",
+    "file sharing",
+    "file transfer",
+    "social",
+    "ipfs"
   ],
-  "license": "MIT",
-  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelMure/arbore-web.git"
+  },
+  "license": "GPL-3.0",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
