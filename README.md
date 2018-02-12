@@ -1,13 +1,13 @@
-# gatsby-starter-default
-The default Gatsby starter
+<p align="center">
+<img src='https://raw.githubusercontent.com/MichaelMure/Arbore-qt/master/resources/logo/arbore-prelogo.png'>
+</p>
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+## Arbore website
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+This repository contains the website of the Arbore project.
 
-## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## License
+>You can check out the full license [here](https://github.com/MichaelMure/arbore-web/blob/master/LICENSE)
+
+This project is licensed under the terms of the **GPL v3** license.
