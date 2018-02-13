@@ -27,7 +27,7 @@ export default class Header extends Component {
 
   fixedMenu() {
     return (
-      <Menu fixed='top' size='large'>
+      <Menu fixed='top' size='large' stackable>
         <Menu.Item>
           <img src={logo}/>
         </Menu.Item>
@@ -38,7 +38,7 @@ export default class Header extends Component {
 
   normalMenu() {
     return (
-      <Menu inverted secondary size='large' style={{}}>
+      <Menu inverted secondary size='large' stackable>
         <Menu.Menu position="left">
           <Menu.Item>
             <img src={logo}/>
