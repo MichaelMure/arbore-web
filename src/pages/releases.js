@@ -24,7 +24,7 @@ export default class ReleasePages extends Component {
     return {
       title: {
         key: `title-${release.url}`,
-        content: <span><Label color='blue' content={release.name}/>  {release.publishedAt.toLocaleDateString()} </span>,
+        content: <span><Label color='blue' content={'Release ' + release.name}/>  {release.publishedAt.toLocaleDateString()} </span>,
       },
       content: {
         key: `content-${release.url}`,
@@ -89,7 +89,7 @@ export default class ReleasePages extends Component {
     const current = releases.current
 
     return (
-      <Container>
+      <Container style={{paddingTop: '20px'}}>
         <Header>Arbore {current.name} - {current.publishedAt.toLocaleDateString()}</Header>
         <Message content={
           <div dangerouslySetInnerHTML={current.bodyHtml}/>
