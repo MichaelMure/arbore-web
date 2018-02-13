@@ -2,13 +2,33 @@ import React from 'react'
 import { Container, Grid, Header, Icon, Image, Message, Segment } from "semantic-ui-react"
 import Download from '../components/Download'
 
-import logo from "../images/logo.svg"
+import identity from '../images/identity.png'
+import contacts from '../images/contacts.png'
+import sharing from '../images/sharing.png'
+import chat from '../images/chat.png'
 
 const Argument = ({icon, header, text}) => (
   <Grid.Column>
     <Header><Icon size='huge' name={icon} />{header}</Header>
     <div style={{ fontSize: '16px', lineHeight: '24px' }}>{ text }</div>
   </Grid.Column>
+)
+
+const Feature = ({inverted, image, header, text}) => (
+  <Segment className="stripe" vertical>
+    <Container>
+      <Grid columns={2} stackable>
+        <Grid.Row>
+          { !inverted && <Grid.Column><Image src={image}/></Grid.Column> }
+          <Grid.Column verticalAlign="middle">
+            <Header as='h3' style={{ fontSize: '2em' }}>{header}</Header>
+            <p style={{ fontSize: '1.1em' }}>{text}</p>
+          </Grid.Column>
+          { inverted && <Grid.Column><Image src={image}/></Grid.Column> }
+        </Grid.Row>
+      </Grid>
+    </Container>
+  </Segment>
 )
 
 const IndexPage = () => (
@@ -50,45 +70,28 @@ const IndexPage = () => (
       </Container>
     </Segment>
 
-    <Segment className="stripe" vertical>
-      <Container>
-        <Grid columns={2}>
-          <Grid.Row>
-            <Grid.Column>
-              <Image src={logo} />
-            </Grid.Column>
-            <Grid.Column verticalAlign="middle">
-              <Header as='h3' style={{ fontSize: '2em' }}>I shouldn't have gone with their competitor.</Header>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+    <Feature
+      image={identity} header='Create your identity'
+      text='Your identity is simply a name or pseudonym. You can also add an avatar and a biography.
+            You can have as many identity as you want.'
+    />
 
-    <Segment className="stripe" vertical>
-      <Container>
-        <Grid columns={2}>
-          <Grid.Row>
-            <Grid.Column verticalAlign="middle">
-              <Header as='h3' style={{ fontSize: '2em' }}>I shouldn't have gone with their competitor.</Header>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </Grid.Column>
-            <Grid.Column>
-              <Image src={logo} />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+    <Feature
+      image={contacts} header='Manage your contacts' inverted
+      text='Once you have added your first contact, Arbore will start to suggest new contact you may know so you can
+            easily build your contact list.'
+    />
+
+    <Feature
+      image={sharing} header='Share'
+      text='Share files, documents, pictures ... with your contacts, as you would with an email. The difference is
+            that there is no limits in size, number or type. It also stay private with strong encryption (not available yet).'
+    />
+
+    <Feature
+      image={chat} header='Chat' inverted
+      text='You can also chat with your contacts directly from the application.'
+    />
 
   </div>
 )
