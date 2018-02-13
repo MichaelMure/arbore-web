@@ -20,7 +20,7 @@ export default class Footer extends Component {
                 <Header inverted as='h4' content='Arbore' />
                 <List link inverted>
                   <List.Item as={Link} to='releases'>Releases</List.Item>
-                  <List.Item as={Link} to='team'>Team</List.Item>
+                  <List.Item as={Link} to='contribute'>Contribute</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>

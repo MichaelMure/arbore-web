@@ -89,7 +89,7 @@ export default class ReleasePages extends Component {
     const current = releases.current
 
     return (
-      <Container style={{paddingTop: '20px'}}>
+      <Container>
         <Header>Arbore {current.name} - {current.publishedAt.toLocaleDateString()}</Header>
         <Message content={
           <div dangerouslySetInnerHTML={current.bodyHtml}/>

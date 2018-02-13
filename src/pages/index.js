@@ -34,7 +34,7 @@ const Feature = ({inverted, image, header, text}) => (
 const IndexPage = () => (
   <div>
 
-    <Segment vertical basic>
+    <Segment basic style={{paddingTop: 0}}>
       <Container>
         <Message
           icon="announcement"

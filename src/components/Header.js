@@ -7,7 +7,7 @@ import logo from "../images/logo.svg"
 const menuItems = [
   { name: "Arbore", path: "/", exact: true},
   { name: "Releases", path: "/releases/", exact: true },
-  { name: "Team", path: "/team/", exact: true },
+  { name: "Contribute", path: "/contribute/", exact: true },
 ]
 
 export default class Header extends Component {
@@ -27,7 +27,7 @@ export default class Header extends Component {
 
   fixedMenu() {
     return (
-      <Menu fixed='top' size='large' stackable>
+      <Menu fixed='top' size='large'>
         <Menu.Item>
           <img src={logo}/>
         </Menu.Item>
@@ -90,7 +90,7 @@ export default class Header extends Component {
     const { visible } = this.state
 
     return (
-      <div>
+      <div style={{paddingBottom: '30px'}}>
         { visible ? this.fixedMenu() : null}
 
         <Visibility onBottomPassed={::this.showFixedMenu} onBottomVisible={::this.hideFixedMenu} once={false} style={{ marginBottom: "5px"}}>
