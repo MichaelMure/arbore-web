@@ -43,7 +43,7 @@ export default class Download extends Component {
     if(!releases) {
       return (
         <Container text>
-          <Grid columns={2}>
+          <Grid columns={2} stackable>
             <Grid.Column>
               <Image src={logo} size='medium'/>
             </Grid.Column>
@@ -92,7 +92,7 @@ export default class Download extends Component {
 
     return (
       <Container text>
-        <Grid columns={2}>
+        <Grid columns={2} stackable>
           <Grid.Column>
             <Image src={logo} size='medium'/>
           </Grid.Column>
