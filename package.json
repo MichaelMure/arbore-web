@@ -38,7 +38,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://github.com/MichaelMure/Arbore -b gh-pages",
+    "deploy": "gatsby build && gh-pages -d public -r https://github.com/MichaelMure/Arbore -b gh-pages",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
