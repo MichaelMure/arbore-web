@@ -53,7 +53,7 @@ const IndexPage = () => (
           <Grid.Row>
             <Grid columns={3} divided stackable>
               <Argument icon='privacy' header='Privacy' text='Keep your private communications private. Stop being the product, be yourself.' />
-              <Argument icon='check' header='Convenient & efficient' text='No number or size limits. Share as much and anything you want.' />
+              <Argument icon='check' header='Share without limits' text='No number or size limits. Share as much and anything you want.' />
               <Argument icon='code' header='Free & Open Source' text='Free as in free beer, Free as in free speech.' />
             </Grid>
           </Grid.Row>
