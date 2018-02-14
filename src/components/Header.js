@@ -69,21 +69,22 @@ export default class Header extends Component {
   }
 
   itemsRight() {
-    return [(
-      <Dropdown item text='Language'>
-        <Dropdown.Menu>
-          <Dropdown.Item>English</Dropdown.Item>
-          <Dropdown.Item>Russian</Dropdown.Item>
-          <Dropdown.Item>Spanish</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    ),(
+    // return [(
+    //   <Dropdown item text='Language'>
+    //     <Dropdown.Menu>
+    //       <Dropdown.Item>English</Dropdown.Item>
+    //       <Dropdown.Item>Russian</Dropdown.Item>
+    //       <Dropdown.Item>Spanish</Dropdown.Item>
+    //     </Dropdown.Menu>
+    //   </Dropdown>
+    // ),(
+    return (
       <Menu.Item>
         <a href="https://github.com/MichaelMure/Arbore">
           <Icon name='github' size='big'/>
         </a>
       </Menu.Item>
-    )]
+    )
   }
 
   render() {
