@@ -49,7 +49,7 @@ export default class ReleasePages extends Component {
           <Table.Cell><a href={asset.browserDownloadUrl}>{asset.name}</a></Table.Cell>
           <Table.Cell>{asset.humanSize}</Table.Cell>
           <Table.Cell>{asset.downloadCount}</Table.Cell>
-          <Table.Cell textAlign="center"><a href={asset.browserDownloadUrl}><Icon name="download" size="large"/></a></Table.Cell>
+          <Table.Cell><a href={asset.browserDownloadUrl}><Icon name="download" size="large"/></a></Table.Cell>
         </Table.Row>
       ))
     }
