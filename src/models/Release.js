@@ -26,6 +26,6 @@ export default class Release {
   }
 
   get bodyHtml() : string {
-    return {__html: marked(this.body)}
+    return {__html: this.body ? marked(this.body) : '<span>No changelog available</span>'}
   }
 }
