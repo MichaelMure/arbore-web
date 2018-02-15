@@ -1,0 +1,33 @@
+dist: trusty
+
+language: node_js
+
+os:
+  - linux
+
+node_js:
+  - 8
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+
+install:
+  - npm install -g npm@latest
+  - npm install
+
+script:
+  - npm run build
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/964abb64511d66538c2d
+    on_success: change
+    on_failure: always
+    on_start: never
