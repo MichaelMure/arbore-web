@@ -61,7 +61,7 @@ const IndexPage = () => (
           <Grid.Row>
             <Grid columns={3} divided stackable>
               <Argument icon='laptop' header='Multi-platform' text='Windows, MacOS and Linux are supported.' />
-              <Argument icon='bug' header='Bug free' text='No spyware, No ads, No user tracking.' />
+              <Argument icon='bug' header='Nasty free' text='No spyware, No ads, No user tracking.' />
               <Argument icon='plug' header='Decentralized' text='Direct transfer from the sender to the recipient. You keep the control.' />
             </Grid>
           </Grid.Row>
