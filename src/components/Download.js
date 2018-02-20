@@ -85,6 +85,14 @@ export default class Download extends Component {
         button = this.fallback
         platform = 'Linux'
         break
+      case 'android':
+        button = this.fallback
+        platform = 'Android is not supported yet'
+        break
+      case 'ios':
+        button = this.fallback
+        platform = 'iOS is not supported yet'
+        break
       default:
         button = this.fallback
         break
