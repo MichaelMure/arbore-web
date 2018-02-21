@@ -138,4 +138,4 @@ export default class Download extends Component {
 
 Download.contextTypes = {
   releases: PropTypes.object
-};
+}

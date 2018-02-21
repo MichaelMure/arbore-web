@@ -1,12 +1,29 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
 import Link from 'gatsby-link'
-import { Container, Divider, Grid, Header, Image, List, Segment } from "semantic-ui-react"
+import { Container, Grid, Header, Image, List, Segment, Statistic } from "semantic-ui-react"
+import ReleaseParser from "../utils/ReleaseParser"
 
-import logo from "../images/logo.svg"
+// import logo from "../images/logo.svg"
 
 export default class Footer extends Component {
 
+  constructor(props: P, context: any) {
+    super(props, context)
+
+    this.state = {
+      releases: null
+    }
+  }
+
+  componentDidMount() {
+    this.context.releases
+      .then(releases => this.setState({releases}))
+  }
+
   render() {
+    const releases: ?ReleaseParser = this.state.releases
+
     return (
       <Segment
         inverted
@@ -16,6 +33,10 @@ export default class Footer extends Component {
         <Container textAlign='center'>
           <Grid divided inverted stackable centered>
             <Grid.Row>
+              {/*<Grid.Column width={3}>*/}
+                {/*{ releases && <Statistic label='Downloads' value={releases.totalDownloads} inverted /> }*/}
+              {/*</Grid.Column>*/}
+
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='Arbore' />
                 <List link inverted>
@@ -54,4 +75,8 @@ export default class Footer extends Component {
       </Segment>
     )
   }
+}
+
+Footer.contextTypes = {
+  releases: PropTypes.object
 }

@@ -65,4 +65,32 @@ export default class ReleaseParser {
   get olds() : Release[] {
     return this.releases.slice(1)
   }
+
+  get linuxDownloads() : number {
+    return this.releases.map((release : Release) =>
+      release.linuxAssets.reduce((acc, asset: Asset) => acc + asset.downloadCount, 0)
+    ).reduce((acc, count) => acc + count, 0)
+  }
+
+  get windowsDownloads() : number {
+    return this.releases.map((release : Release) =>
+      release.windowsAssets.reduce((acc, asset: Asset) => acc + asset.downloadCount, 0)
+    ).reduce((acc, count) => acc + count, 0)
+  }
+
+  get macosDownloads() : number {
+    return this.releases.map((release : Release) =>
+      release.macosAssets.reduce((acc, asset: Asset) => acc + asset.downloadCount, 0)
+    ).reduce((acc, count) => acc + count, 0)
+  }
+
+  get totalDownloads() : number {
+    return this.releases.map((release : Release) =>
+      [].concat(
+        release.linuxAssets.reduce((acc, asset: Asset) => acc + asset.downloadCount, 0),
+        release.windowsAssets.reduce((acc, asset: Asset) => acc + asset.downloadCount, 0),
+        release.macosAssets.reduce((acc, asset: Asset) => acc + asset.downloadCount, 0),
+      ).reduce((acc, count) => acc + count, 0)
+    ).reduce((acc, count) => acc + count, 0)
+  }
 }

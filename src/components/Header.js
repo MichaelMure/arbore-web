@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import { Container, Menu, Visibility, Segment, Image, Dropdown, Icon } from "semantic-ui-react"
+import { Menu, Visibility, Segment, Dropdown, Icon } from "semantic-ui-react"
 
 import logo from "../images/logo.svg"
 
