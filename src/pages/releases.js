@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Accordion, Container, Header, Icon, Label, Loader, Message, Segment, Table } from "semantic-ui-react"
+import { Accordion, Container, Header, Icon, Label, Loader, Message, Responsive, Segment, Table } from "semantic-ui-react"
 import PropTypes from 'prop-types'
 import Asset from '../models/Asset'
 import Release from '../models/Release'
@@ -48,20 +48,20 @@ export default class ReleasePages extends Component {
           <Table.Cell><Icon name={asset.icon} size="large"/>{asset.os}</Table.Cell>
           <Table.Cell><a href={asset.browserDownloadUrl}>{asset.name}</a></Table.Cell>
           <Table.Cell>{asset.humanSize}</Table.Cell>
-          <Table.Cell>{asset.downloadCount}</Table.Cell>
+          <Responsive as={Table.Cell} minWidth={600}>{asset.downloadCount}</Responsive>
           <Table.Cell><a href={asset.browserDownloadUrl}><Icon name="download" size="large"/></a></Table.Cell>
         </Table.Row>
       ))
     }
 
     return (
-      <Table basic='very' singleLine>
+      <Table basic='very' singleLine unstackable>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell/>
             <Table.HeaderCell/>
             <Table.HeaderCell>Size</Table.HeaderCell>
-            <Table.HeaderCell>Downloads</Table.HeaderCell>
+            <Responsive as={Table.HeaderCell} minWidth={600}>Downloads</Responsive>
             <Table.HeaderCell/>
           </Table.Row>
         </Table.Header>
