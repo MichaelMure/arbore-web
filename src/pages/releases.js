@@ -47,7 +47,7 @@ export default class ReleasePages extends Component {
         <Table.Row key={asset.id}>
           <Table.Cell><Icon name={asset.icon} size="large"/>{asset.os}</Table.Cell>
           <Table.Cell><a href={asset.browserDownloadUrl}>{asset.name}</a></Table.Cell>
-          <Table.Cell>{asset.humanSize}</Table.Cell>
+          <Responsive as={Table.Cell} minWidth={450}>{asset.humanSize}</Responsive>
           <Responsive as={Table.Cell} minWidth={600}>{asset.downloadCount}</Responsive>
           <Table.Cell><a href={asset.browserDownloadUrl}><Icon name="download" size="large"/></a></Table.Cell>
         </Table.Row>
@@ -60,7 +60,7 @@ export default class ReleasePages extends Component {
           <Table.Row>
             <Table.HeaderCell/>
             <Table.HeaderCell/>
-            <Table.HeaderCell>Size</Table.HeaderCell>
+            <Responsive as={Table.HeaderCell} minWidth={450}>Size</Responsive>
             <Responsive as={Table.HeaderCell} minWidth={600}>Downloads</Responsive>
             <Table.HeaderCell/>
           </Table.Row>
