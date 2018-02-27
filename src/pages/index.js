@@ -41,6 +41,11 @@ const IndexPage = () => (
           header="Work in progress"
           content="This software is still being built and is not ready for prime time. In particular, encryption is not here yet. Any feedback and help is welcome !"
         />
+        <Message
+          icon="travel"
+          header="Hey by the way"
+          content={<span>I'm looking for a cool remote job. Have a look at my&nbsp;<a href="http://pellelatarte.fr/dl/resume.pdf">resume</a>.</span>}
+        />
       </Container>
     </Segment>
 
