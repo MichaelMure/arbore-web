@@ -26,6 +26,9 @@ export default () => (
       <List.Item><b>Translators</b>, to help translate Arbore and this website when ready</List.Item>
     </List>
 
+    <p>You can also join the <a href='https://gitter.im/Arbore/Lobby'>Arbore's Gitter chatroom</a>.</p>
+    <p>For other kind of inquiry, you can find my email on my Github profile.</p>
+
     <Header as='h2'>Donate</Header>
 
     <p>You can also support the development of Arbore by donating using bitcoin or bitcoin cash:</p>
