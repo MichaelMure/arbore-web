@@ -39,7 +39,7 @@ const IndexPage = () => (
         <Message
           icon="announcement"
           header="Work in progress"
-          content="This software is still being built and is not ready for prime time. Any feedback and help is welcome !"
+          content="This software is still being built and is not ready for prime time. In particular, encryption is not here yet. Any feedback and help is welcome !"
         />
       </Container>
     </Segment>
