@@ -7,6 +7,7 @@ import logo from "../images/logo.svg"
 const menuItems = [
   { name: "Arbore", path: "/", exact: true},
   { name: "Releases", path: "/releases/", exact: true },
+  { name: "FAQ", path: "/faq", exact: true },
   { name: "Contribute", path: "/contribute/", exact: true },
 ]
 
