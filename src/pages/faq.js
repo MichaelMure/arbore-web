@@ -25,7 +25,7 @@ const panels = [
       content: <div>
         <p>Communication medium shapes how people interact and by extension how society works.</p>
         <p>Nowadays to communicate and share, people massively use products from companies like Google, Facebook, Dropbox ...</p>
-        <p>These products are free and easy to use but the drawback is that you have to give your private life to these companies, which use that to feed you with advertisement. More often than not, governments also have access to all of these databases and can use that to in a way detrimental to society.</p>
+        <p>These products are free and easy to use but the drawback is that you have to give your private life to these companies, which use that to feed you with advertisement. More often than not, governments also have access to all of these databases and can use that in a way detrimental to society.</p>
         <p>Arbore is an attempt to provide an alternate medium that is free of commercial or private interest, a place where privacy still exist. That doesn't mean that Facebook and Google have to go, but at least there is another way.</p>
         <Message>"Saying that you don't care about privacy because you have nothing to hide, is like saying that you don't care about freedom of speech because you have nothing to say".<br/>
           -- Edward Snowden</Message>
