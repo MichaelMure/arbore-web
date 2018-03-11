@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Accordion, Container, Header, Icon, Label, Loader, Message, Responsive, Segment, Table } from "semantic-ui-react"
 import PropTypes from 'prop-types'
+import { Accordion, Container, Header, Icon, Label, Loader, Message, Responsive, Segment, Table } from "semantic-ui-react"
+import Moment from "react-moment"
 import Asset from '../models/Asset'
 import Release from '../models/Release'
 import ReleaseParser from '../utils/ReleaseParser'
@@ -24,7 +25,10 @@ export default class ReleasePages extends Component {
     return {
       title: {
         key: `title-${release.url}`,
-        content: <span><Label color='blue' content={'Release ' + release.name}/>  {release.publishedAt.toLocaleDateString()} </span>,
+        content:
+          <span>
+            <Label color='blue' content={'Release ' + release.name}/> {release.publishedAt.toLocaleDateString()} (<Moment fromNow>{release.publishedAt}</Moment>)
+          </span>,
       },
       content: {
         key: `content-${release.url}`,
@@ -90,7 +94,7 @@ export default class ReleasePages extends Component {
 
     return (
       <Container>
-        <Header>Arbore {current.name} - {current.publishedAt.toLocaleDateString()}</Header>
+        <Header>Arbore {current.name} - {current.publishedAt.toLocaleDateString()} (<Moment fromNow>{current.publishedAt}</Moment>)</Header>
         <Message content={
           <div dangerouslySetInnerHTML={current.bodyHtml}/>
         }/>
