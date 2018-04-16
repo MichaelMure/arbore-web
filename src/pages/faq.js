@@ -63,7 +63,7 @@ const panels = [
     content: {
       content: <div>
         <p>Unfortunately that's a yes for now.</p>
-        <p>There is way to reduce this problem thought and it will be implemented later.</p>
+        <p>There is way to reduce this problem though and it will be implemented later.</p>
       </div>,
       key: 'item8',
     },
